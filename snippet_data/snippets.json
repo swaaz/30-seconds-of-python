@@ -150,9 +150,9 @@
       "type": "snippet",
       "attributes": {
         "fileName": "camel.md",
-        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp, `title()` and `lower`.\n\n",
+        "text": "Converts a string to camelcase.\n\nUse `re.sub()` to replace any `-`,`_` or ` ` (space) with a space, using the regexp `r\"(_|-)+\"`.\nUse `title()` to capitalize the first letter of each word convert the rest to lowercase.\nFinally, use `replace()` to remove spaces between words.\n\n",
         "codeBlocks": {
-          "code": "import re\n\ndef camel(s):\n  s = re.sub(r\"(\\s|_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
+          "code": "import re\n\ndef camel(s):\n  s = re.sub(r\"(_|-)+\", \" \", s).title().replace(\" \", \"\")\n  return s[0].lower() + s[1:]",
           "example": "camel('some_database_field_name'); # 'someDatabaseFieldName'\ncamel('Some label that needs to be camelized'); # 'someLabelThatNeedsToBeCamelized'\ncamel('some-javascript-property'); # 'someJavascriptProperty'\ncamel('some-mixed_string with spaces_underscores-and-hyphens'); # 'someMixedStringWithSpacesUnderscoresAndHyphens'"
         },
         "tags": [
@@ -162,7 +162,7 @@
         ]
       },
       "meta": {
-        "hash": "60b308cb7f28b676fb122949d04ae07af0d4e0fcb96f037b3aa3c09be9b2e7ab"
+        "hash": "9df97be0166e2a4a90859e878f986c0adb539ac41b85aac9c05e4dd0999155b5"
       }
     },
     {
@@ -1044,6 +1044,26 @@
       }
     },
     {
+      "id": "max_element_index",
+      "title": "max_element_index",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "max_element_index.md",
+        "text": "Returns the pindex of the element with the maximum value in a list.\n\nUse `max()` and `list.index()` to get the maximum value in the list and return its index.\n\n",
+        "codeBlocks": {
+          "code": "def max_element_index(arr):\r\n  return arr.index(max(arr))",
+          "example": "thon\r\nmax_element_index([5, 8, 9, 7, 10, 3, 0]) # 4"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b482aa65907f5e1516d22e1e1ba88a87234a83e8db220a11e9ea4687cee6376c"
+      }
+    },
+    {
       "id": "max_n",
       "title": "max_n",
       "type": "snippet",
@@ -1606,7 +1626,7 @@
         "fileName": "zip.md",
         "text": "Creates a list of elements, grouped based on the position in the original lists.\n\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n",
         "codeBlocks": {
-          "code": "def zip(*args, fillvalue=None):\n  max_length = max([len(lst) for lst in args])\n  result = []\n  for i in range(max_length):\n    result.append([\n      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))\n    ])\n  return result",
+          "code": "def zip(*args, fill_value=None):\n  max_length = max([len(lst) for lst in args])\n  result = []\n  for i in range(max_length):\n    result.append([\n      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))\n    ])\n  return result",
           "example": "zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]\nzip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]\nzip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]"
         },
         "tags": [
@@ -1616,7 +1636,7 @@
         ]
       },
       "meta": {
-        "hash": "8c0dea46f260c7edfa363a0a295683d858c2011c9220b2d4fc53025a684388f0"
+        "hash": "7741a05775275c2b463f0a110d70b130393857f2c391e571ecc1dcd4c0e94809"
       }
     }
   ],

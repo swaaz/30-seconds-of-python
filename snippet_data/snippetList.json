@@ -114,7 +114,7 @@
       "type": "snippetListing",
       "title": "camel",
       "attributes": {
-        "text": "Converts a string to camelcase.\n\nBreak the string into words and combine them capitalizing the first letter of each word, using a regexp, `title()` and `lower`.\n\n",
+        "text": "Converts a string to camelcase.\n\nUse `re.sub()` to replace any `-`,`_` or ` ` (space) with a space, using the regexp `r\"(_|-)+\"`.\nUse `title()` to capitalize the first letter of each word convert the rest to lowercase.\nFinally, use `replace()` to remove spaces between words.\n\n",
         "tags": [
           "string",
           "regexp",
@@ -122,7 +122,7 @@
         ]
       },
       "meta": {
-        "hash": "60b308cb7f28b676fb122949d04ae07af0d4e0fcb96f037b3aa3c09be9b2e7ab"
+        "hash": "9df97be0166e2a4a90859e878f986c0adb539ac41b85aac9c05e4dd0999155b5"
       }
     },
     {
@@ -789,6 +789,21 @@
       }
     },
     {
+      "id": "max_element_index",
+      "type": "snippetListing",
+      "title": "max_element_index",
+      "attributes": {
+        "text": "Returns the pindex of the element with the maximum value in a list.\n\nUse `max()` and `list.index()` to get the maximum value in the list and return its index.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b482aa65907f5e1516d22e1e1ba88a87234a83e8db220a11e9ea4687cee6376c"
+      }
+    },
+    {
       "id": "max_n",
       "type": "snippetListing",
       "title": "max_n",
@@ -1221,7 +1236,7 @@
         ]
       },
       "meta": {
-        "hash": "8c0dea46f260c7edfa363a0a295683d858c2011c9220b2d4fc53025a684388f0"
+        "hash": "7741a05775275c2b463f0a110d70b130393857f2c391e571ecc1dcd4c0e94809"
       }
     }
   ],

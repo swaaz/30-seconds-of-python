@@ -52,6 +52,7 @@
 * [`intersection_by`](#intersection_by)
 * [`last`](#last)
 * [`longest_item`](#longest_item)
+* [`max_element_index`](#max_element_index)
 * [`max_n`](#max_n)
 * [`min_n`](#min_n)
 * [`most_frequent`](#most_frequent)
@@ -774,6 +775,28 @@ longest_item([1, 2, 3], 'foobar') # 'foobar'
 
 <br>[⬆ Back to top](#contents)
 
+### max_element_index
+
+Returns the pindex of the element with the maximum value in a list.
+
+Use `max()` and `list.index()` to get the maximum value in the list and return its index.
+
+```py
+def max_element_index(arr):
+  return arr.index(max(arr))
+```
+
+<details>
+<summary>Examples</summary>
+
+```py
+thon
+max_element_index([5, 8, 9, 7, 10, 3, 0]) # 4
+```
+</details>
+
+<br>[⬆ Back to top](#contents)
+
 ### max_n
 
 Returns the `n` maximum elements from the provided list. 
@@ -1176,7 +1199,7 @@ Loop for `max_length` times grouping elements.
 If lengths of `lists` vary, use `fill_value` (defaults to `None`). 
 
 ```py
-def zip(*args, fillvalue=None):
+def zip(*args, fill_value=None):
   max_length = max([len(lst) for lst in args])
   result = []
   for i in range(max_length):
@@ -1761,13 +1784,15 @@ byte_size('Hello World') # 11
 
 Converts a string to camelcase.
 
-Break the string into words and combine them capitalizing the first letter of each word, using a regexp, `title()` and `lower`.
+Use `re.sub()` to replace any `-`,`_` or ` ` (space) with a space, using the regexp `r"(_|-)+"`.
+Use `title()` to capitalize the first letter of each word convert the rest to lowercase.
+Finally, use `replace()` to remove spaces between words.
 
 ```py
 import re
 
 def camel(s):
-  s = re.sub(r"(\s|_|-)+", " ", s).title().replace(" ", "")
+  s = re.sub(r"(_|-)+", " ", s).title().replace(" ", "")
   return s[0].lower() + s[1:]
 ```
 

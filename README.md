@@ -1734,8 +1734,8 @@ Use `dict.values()` to return the values in the given dictionary.
 Return a `list()` of the previous result.
 
 ```py
-def values_only(dict):
-  return list(dict.values())
+def values_only(flat_dict):
+  return list(flat_dict.values())
 ```
 
 <details>
@@ -1784,7 +1784,7 @@ byte_size('Hello World') # 11
 
 Converts a string to camelcase.
 
-Use `re.sub()` to replace any `-`,`_` or ` ` (space) with a space, using the regexp `r"(_|-)+"`.
+Use `re.sub()` to replace any `-` or `_` with a space, using the regexp `r"(_|-)+"`.
 Use `title()` to capitalize the first letter of each word convert the rest to lowercase.
 Finally, use `replace()` to remove spaces between words.
 

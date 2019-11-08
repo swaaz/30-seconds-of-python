@@ -4,6 +4,7 @@ const fs = require('fs-extra'),
   crypto = require('crypto'),
   frontmatter = require('front-matter');
 const config = require('../../config');
+const execSync = require('child_process').execSync;
 
 // Reade all files in a directory
 const getFilesInDir = (directoryPath, withPath, exclude = null) => {
@@ -53,7 +54,7 @@ const getCodeBlocks = str => {
     });
   }
   const replacer = new RegExp(
-    `\`\`\`${config.language}([\\s\\S]*?)\`\`\``,
+    `\`\`\`${config.language.short}([\\s\\S]*?)\`\`\``,
     'g',
   );
   results = results.map(v => v.replace(replacer, '$1').trim());
@@ -99,6 +100,9 @@ const readSnippets = snippetsPath => {
         },
         meta: {
           hash: hashData(data.body),
+          firstSeen: execSync(`git log --diff-filter=A --pretty=format:%at -- snippets/${snippet}`).toString(),
+          lastUpdated: execSync(`git log -n 1 --pretty=format:%at -- snippets/${snippet}`).toString(),
+          updateCount: execSync(`git log --pretty=%H -- snippets/${snippet}`).toString().split('\n').length
         },
       };
     }

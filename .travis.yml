@@ -4,9 +4,10 @@ cache:
     - node_modules
 node_js:
 - lts/*
+before_install:
+- git fetch --unshallow
 script:
 - npm run extractor
-- npm run builder
 after_success:
 - chmod +x .travis/push.sh
 - .travis/push.sh

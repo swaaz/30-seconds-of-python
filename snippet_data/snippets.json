@@ -350,7 +350,7 @@
         "fileName": "compact.md",
         "text": "Removes falsey values from a list.\n\nUse `filter()` to filter out falsey values (`False`, `None`, `0`, and `\"\"`).\n\n",
         "codeBlocks": {
-          "code": "def compact(lst):\n  return list(filter(bool, lst))",
+          "code": "def compact(lst):\n  return list(filter(None, lst))",
           "example": "compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]"
         },
         "tags": [
@@ -359,10 +359,10 @@
         ]
       },
       "meta": {
-        "hash": "6b98c58b6aecf1b58ed36f55a407bf2f2d68938723d37472fe43d9e652d93fe6",
+        "hash": "49af477281165f9623eb1ad399be5f43705940587ba70ee5d4ac697fcb29c6cd",
         "firstSeen": "1516357026",
-        "lastUpdated": "1566285856",
-        "updateCount": 13,
+        "lastUpdated": "1583870374",
+        "updateCount": 14,
         "authorCount": 5
       }
     },
@@ -658,6 +658,54 @@
       }
     },
     {
+      "id": "drop",
+      "title": "drop",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "drop.md",
+        "text": "Returns a list with `n` elements removed from the left.\n\nUse slice notation to remove the specified number of elements from the left.\n\n",
+        "codeBlocks": {
+          "code": "def drop(a, n = 1):\r\n  return a[n:]",
+          "example": "drop([1, 2, 3]) # [2, 3]\r\ndrop([1, 2, 3], 2) # [3]\r\ndrop([1, 2, 3], 42) # []"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "39a98596a5f94242a3bed40282ed2785f6e7254148bcb5410c5028dcbf352095",
+        "firstSeen": "1583870381",
+        "lastUpdated": "1583870381",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "drop_right",
+      "title": "drop_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "drop_right.md",
+        "text": "Returns a list with `n` elements removed from the right.\n\nUse slice notation to remove the specified number of elements from the right.\n\n",
+        "codeBlocks": {
+          "code": "def drop_right(a, n = 1):\r\n  return a[:-n]",
+          "example": "drop_right([1, 2, 3]) # [1, 2]\r\ndrop_right([1, 2, 3], 2) # [1]\r\ndrop_right([1, 2, 3], 42) # []"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b8166585e68a5b2b74af067029d1d8895edef94f745816c7e8d3b04a7bdc9792",
+        "firstSeen": "1583870381",
+        "lastUpdated": "1583870381",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "every",
       "title": "every",
       "type": "snippet",
@@ -805,6 +853,102 @@
       }
     },
     {
+      "id": "find",
+      "title": "find",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find.md",
+        "text": "Returns the value of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the first element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find(lst, fn):\r\n  return next(x for x in lst if fn(x))",
+          "example": "find([1, 2, 3, 4], lambda n: n % 2 == 1) # 1"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3e879def3995b7bd2062230bdc8b87269eeb5dc9eb6ce9eb3f297d84dc5beb5e",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_index",
+      "title": "find_index",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_index.md",
+        "text": "Returns the index of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find_index(lst, fn):\r\n  return next(i for i, x in enumerate(lst) if fn(x))",
+          "example": "find_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 0"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2270fdbf382af07bdc47d0dba84eec939885734cb17f015186547a1b9a26ecce",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_last",
+      "title": "find_last",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_last.md",
+        "text": "Returns the value of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the last element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find_last(lst, fn):\r\n  return next(x for x in lst[::-1] if fn(x))",
+          "example": "find_last([1, 2, 3, 4], lambda n: n % 2 == 1) # 3"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5a4ad2eca4edba75e139f8979bdb9eba7ab116e0c1f80d054261764d54e16957",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_last_index",
+      "title": "find_last_index",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_last_index.md",
+        "text": "Returns the index of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the last element in `lst` for which `fn` returns `True`.\n\n",
+        "codeBlocks": {
+          "code": "def find_last_index(lst, fn):\r\n  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))",
+          "example": "find_last_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 2"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "de25fa799e8392834d484b1609eb02a68a46dd9833086e4fdf9690fe2516a858",
+        "firstSeen": "1583872728",
+        "lastUpdated": "1583872728",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "find_parity_outliers",
       "title": "find_parity_outliers",
       "type": "snippet",
@@ -854,6 +998,78 @@
       }
     },
     {
+      "id": "for_each",
+      "title": "for_each",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "for_each.md",
+        "text": "Executes the provided function once for each list element.\n\nUse a `for` loop to execute `fn` for each element in `itr`.\n\n",
+        "codeBlocks": {
+          "code": "def for_each(itr, fn):\r\n  for el in itr:\r\n    fn(el)",
+          "example": "for_each([1, 2, 3], print) # 1 2 3"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "bbd13f90d710c3fa85d297d668f2db9de6e20ae87b5b85977126de92c9d2a508",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "for_each_right",
+      "title": "for_each_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "for_each_right.md",
+        "text": "Executes the provided function once for each list element, starting from the list's last element.\n\nUse a `for` loop in combination with slice notation to execute `fn` for each element in `itr`, starting from the last one.\n\n",
+        "codeBlocks": {
+          "code": "def for_each_right(itr, fn):\r\n  for el in itr[::-1]:\r\n    fn(el)",
+          "example": "for_each_right([1, 2, 3], print) # 3 2 1"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "96f4508f15d58e10c82959ab9aa5ec37860e051b5d211912f2b17ad968e10464",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "frequencies",
+      "title": "frequencies",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "frequencies.md",
+        "text": "Returns a dictionary with the unique values of a list as keys and their frequencies as the values.\n\nUse a `for` loop to populate a dictionary, `f`, with the unique values in `lst` as keys, adding to existing keys every time the same value is encountered.\n\n",
+        "codeBlocks": {
+          "code": "from functools import reduce\r\n\r\ndef frequencies(lst):\r\n  f = {}\r\n  for x in lst:\r\n    f[x] = f[x] + 1 if x in f else 1\r\n  return f",
+          "example": "frequencies(['a', 'b', 'a', 'c', 'a', 'a', 'b']) # { 'a': 4, 'b': 2, 'c': 1 }"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e39e557aa6a70400a5e7b7a7ab5291e1937d93c0016c8fd0897cce32af315be6",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "gcd",
       "title": "gcd",
       "type": "snippet",
@@ -891,15 +1107,15 @@
         "tags": [
           "list",
           "object",
-          "beginner"
+          "intermediate"
         ]
       },
       "meta": {
         "hash": "d558526c1ec2887f13bb16fd5184a9b98f2a7a76907b191278f5e58e8703846e",
         "firstSeen": "1566296940",
-        "lastUpdated": "1578048759",
-        "updateCount": 6,
-        "authorCount": 2
+        "lastUpdated": "1581360726",
+        "updateCount": 7,
+        "authorCount": 3
       }
     },
     {
@@ -908,7 +1124,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "has_duplicates.md",
-        "text": "Returns `True` if there are duplicate values in a flast list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "text": "Returns `True` if there are duplicate values in a flat list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
         "codeBlocks": {
           "code": "def has_duplicates(lst):\n  return len(lst) != len(set(lst))",
           "example": "x = [1, 2, 3, 4, 5, 5]\ny = [1, 2, 3, 4, 5]\nhas_duplicates(x) # True\nhas_duplicates(y) # False"
@@ -919,11 +1135,35 @@
         ]
       },
       "meta": {
-        "hash": "498b0cc49b4a1ad7f98addb9c7bbc84320d91a5558eaf681352086c5ad6edb44",
+        "hash": "fb22c3f566fea0468c7331478cb216890de4af6b86b24f1ac41656bae949d99c",
         "firstSeen": "1522569789",
-        "lastUpdated": "1578048759",
-        "updateCount": 7,
-        "authorCount": 3
+        "lastUpdated": "1581355826",
+        "updateCount": 8,
+        "authorCount": 4
+      }
+    },
+    {
+      "id": "have_same_contents",
+      "title": "have_same_contents",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "have_same_contents.md",
+        "text": "Returns `True` if two lists contain the same elements regardless of order, `False` otherwise.\n\nUse `set()` on the combination of both lists to find the unique values.\nIterate over them with a `for` loop comparing the `count()` of each unique value in each list.\nReturn `False` if the counts do not match for any element, `True` otherwise.\n\n",
+        "codeBlocks": {
+          "code": "def have_same_contents(a, b):\r\n  for v in set(a + b):\r\n    if a.count(v) != b.count(v):\r\n      return False\r\n  return True",
+          "example": "have_same_contents([1, 2, 4], [2, 4, 1]) # True"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3eb3a7c4b95e18bcd181965b01d6f46189735e0ada4a7e3e787026d9643792ed",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -971,6 +1211,54 @@
         "firstSeen": "1566297700",
         "lastUpdated": "1578049196",
         "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "includes_all",
+      "title": "includes_all",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "includes_all.md",
+        "text": "Returns `True` if all the elements in `values` are included in `lst`, `False` otherwise.\n\nCheck if every value in `values` is contained in `lst` using a `for` loop, returning `False` if any one value is not found, `True` otherwise.\n\n",
+        "codeBlocks": {
+          "code": "def includes_all(lst, values):\r\n  for v in values:\r\n    if v not in lst:\r\n      return False\r\n  return True",
+          "example": "includes_all([1, 2, 3, 4], [1, 4]) # True\r\nincludes_all([1, 2, 3, 4], [1, 5]) # False"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "dd6fe881dce1046713ff6fe1a9ee70cb3ff580b5b4f40a83f1cded8f1b2fc471",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584380100",
+        "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "includes_any",
+      "title": "includes_any",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "includes_any.md",
+        "text": "Returns `True` if any element in `values` is included in `lst`, `False` otherwise.\n\nCheck if any value in `values` is contained in `lst` using a `for` loop, returning `True` if any one value is found, `False` otherwise.\n\n",
+        "codeBlocks": {
+          "code": "def includes_any(lst, values):\r\n  for v in values:\r\n    if v in lst:\r\n      return True\r\n  return False",
+          "example": "includes_any([1, 2, 3, 4], [2, 9]) # True\r\nincludes_any([1, 2, 3, 4], [8, 9]) # False"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0207394cbc28148c73703db1298673049f9fe66936a59057955d3da180f3a0c4",
+        "firstSeen": "1584269648",
+        "lastUpdated": "1584269648",
+        "updateCount": 2,
         "authorCount": 2
       }
     },
@@ -1125,10 +1413,10 @@
       "type": "snippet",
       "attributes": {
         "fileName": "is_anagram.md",
-        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `s.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
+        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `isalnum()` to filter out non-alphanumeric characters, `lower()` to transform each character to lowercase.\nUse `collections.Counter` to count the resulting characters for each string and compare the results.\n\n",
         "codeBlocks": {
-          "code": "def is_anagram(s1, s2):\n  _str1, _str2 = s1.replace(\" \", \"\"), s2.replace(\" \", \"\")\n  return False if len(_str1) != len(_str2) else sorted(_str1.lower()) == sorted(_str2.lower())",
-          "example": "is_anagram(\"anagram\", \"Nag a ram\")  # True"
+          "code": "from collections import Counter\n\ndef is_anagram(s1, s2):\n  return Counter(\n    c.lower() for c in s1 if c.isalnum()\n  ) == Counter(\n    c.lower() for c in s2 if c.isalnum()\n  )",
+          "example": "is_anagram(\"#anagram\", \"Nag a ram!\")  # True"
         },
         "tags": [
           "string",
@@ -1136,11 +1424,35 @@
         ]
       },
       "meta": {
-        "hash": "efdcecce589a3812218ede260f156888eb8544ccf85eab35d1885689668292e8",
+        "hash": "15833b3a98e905cf4cbac346028c5e6b5560d3b968800b94548e77a77098b7cc",
         "firstSeen": "1538389049",
-        "lastUpdated": "1578049045",
-        "updateCount": 8,
-        "authorCount": 4
+        "lastUpdated": "1584622237",
+        "updateCount": 10,
+        "authorCount": 5
+      }
+    },
+    {
+      "id": "is_contained_in",
+      "title": "is_contained_in",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "is_contained_in.md",
+        "text": "Returns `True` if the elements of the first list are contained in the second one regardless of order, `False` otherwise.\n\n\nUse `count()` to check if any value in `a` has more occurences than it has in `b`, returning `False` if any such value is found, `True` otherwise.\n\n\n",
+        "codeBlocks": {
+          "code": "def is_contained_in(a, b):\r\n  for v in set(a):\r\n    if a.count(v) > b.count(v):\r\n      return False\r\n  return True",
+          "example": "is_contained_in([1, 4], [2, 4, 1]) # True"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8fa2c19d9202502df8d26e461e9b02c4c47525dc79a91f4616b61d650cfb23ce",
+        "firstSeen": "1584380895",
+        "lastUpdated": "1584388846",
+        "updateCount": 3,
+        "authorCount": 2
       }
     },
     {
@@ -1337,6 +1649,30 @@
         "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549",
         "firstSeen": "1566304069",
         "lastUpdated": "1578048759",
+        "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "map_object",
+      "title": "map_object",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "map_object.md",
+        "text": "Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.\n\n\nUse a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.\n\n",
+        "codeBlocks": {
+          "code": "def map_object(itr, fn):\r\n  ret = {}\r\n  for x in itr:\r\n    ret[x] = fn(x)\r\n  return ret",
+          "example": "map_object([1,2,3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }"
+        },
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "704d9dfb490d983b2be8465e241cf61360f574a22230974a38f55554b3a8e044",
+        "firstSeen": "1584381063",
+        "lastUpdated": "1584388846",
         "updateCount": 3,
         "authorCount": 2
       }
@@ -1958,6 +2294,54 @@
       }
     },
     {
+      "id": "take",
+      "title": "take",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "take.md",
+        "text": "Returns a list with `n` elements removed from the beginning.\n\nUse slice notation to create a slice of the list with `n` elements taken from the beginning.\n\n",
+        "codeBlocks": {
+          "code": "def take(itr, n = 1):\r\n  return itr[:n]",
+          "example": "take([1, 2, 3], 5) # [1, 2, 3]\r\ntake([1, 2, 3], 0) # []"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ee77775f6d662576e60f839273bc23a1200d2e58d5f681ab8fc5a686b647bd81",
+        "firstSeen": "1584381164",
+        "lastUpdated": "1584381164",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "take_right",
+      "title": "take_right",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "take_right.md",
+        "text": "Returns a list with `n` elements removed from the end.\n\nUse slice notation to create a slice of the list with `n` elements taken from the end.\n\n",
+        "codeBlocks": {
+          "code": "def take_right(itr, n = 1):\r\n  return itr[-n:]",
+          "example": "take_right([1, 2, 3], 2) # [2, 3]\r\ntake_right([1, 2, 3]) # [3]"
+        },
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5221a664a891ded456017072033baeb1bc25ee10e9556f64f09f6ebf0b5bf07b",
+        "firstSeen": "1584381164",
+        "lastUpdated": "1584381164",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "transpose",
       "title": "transpose",
       "type": "snippet",
@@ -1975,7 +2359,7 @@
       },
       "meta": {
         "hash": "d6148455c7451e290ad1edf5ac25bf79f8f20c56c829105322b3c4007d5ad20b",
-        "firstSeen": "1570517588\n1569989000",
+        "firstSeen": "1570517588",
         "lastUpdated": "1578048759",
         "updateCount": 5,
         "authorCount": 3

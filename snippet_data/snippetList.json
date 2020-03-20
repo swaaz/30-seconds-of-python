@@ -228,7 +228,7 @@
         ]
       },
       "meta": {
-        "hash": "6b98c58b6aecf1b58ed36f55a407bf2f2d68938723d37472fe43d9e652d93fe6"
+        "hash": "49af477281165f9623eb1ad399be5f43705940587ba70ee5d4ac697fcb29c6cd"
       }
     },
     {
@@ -415,6 +415,36 @@
       }
     },
     {
+      "id": "drop",
+      "type": "snippetListing",
+      "title": "drop",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the left.\n\nUse slice notation to remove the specified number of elements from the left.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "39a98596a5f94242a3bed40282ed2785f6e7254148bcb5410c5028dcbf352095"
+      }
+    },
+    {
+      "id": "drop_right",
+      "type": "snippetListing",
+      "title": "drop_right",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the right.\n\nUse slice notation to remove the specified number of elements from the right.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "b8166585e68a5b2b74af067029d1d8895edef94f745816c7e8d3b04a7bdc9792"
+      }
+    },
+    {
       "id": "every",
       "type": "snippetListing",
       "title": "every",
@@ -508,6 +538,66 @@
       }
     },
     {
+      "id": "find",
+      "type": "snippetListing",
+      "title": "find",
+      "attributes": {
+        "text": "Returns the value of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the first element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "3e879def3995b7bd2062230bdc8b87269eeb5dc9eb6ce9eb3f297d84dc5beb5e"
+      }
+    },
+    {
+      "id": "find_index",
+      "type": "snippetListing",
+      "title": "find_index",
+      "attributes": {
+        "text": "Returns the index of the first element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "2270fdbf382af07bdc47d0dba84eec939885734cb17f015186547a1b9a26ecce"
+      }
+    },
+    {
+      "id": "find_last",
+      "type": "snippetListing",
+      "title": "find_last",
+      "attributes": {
+        "text": "Returns the value of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension and `next()` to return the last element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5a4ad2eca4edba75e139f8979bdb9eba7ab116e0c1f80d054261764d54e16957"
+      }
+    },
+    {
+      "id": "find_last_index",
+      "type": "snippetListing",
+      "title": "find_last_index",
+      "attributes": {
+        "text": "Returns the index of the last element in the provided list that satisfies the provided testing function.\n\nUse list comprehension, `enumerate()` and `next()` to return the index of the last element in `lst` for which `fn` returns `True`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "de25fa799e8392834d484b1609eb02a68a46dd9833086e4fdf9690fe2516a858"
+      }
+    },
+    {
       "id": "find_parity_outliers",
       "type": "snippetListing",
       "title": "find_parity_outliers",
@@ -539,6 +629,51 @@
       }
     },
     {
+      "id": "for_each",
+      "type": "snippetListing",
+      "title": "for_each",
+      "attributes": {
+        "text": "Executes the provided function once for each list element.\n\nUse a `for` loop to execute `fn` for each element in `itr`.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "bbd13f90d710c3fa85d297d668f2db9de6e20ae87b5b85977126de92c9d2a508"
+      }
+    },
+    {
+      "id": "for_each_right",
+      "type": "snippetListing",
+      "title": "for_each_right",
+      "attributes": {
+        "text": "Executes the provided function once for each list element, starting from the list's last element.\n\nUse a `for` loop in combination with slice notation to execute `fn` for each element in `itr`, starting from the last one.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "96f4508f15d58e10c82959ab9aa5ec37860e051b5d211912f2b17ad968e10464"
+      }
+    },
+    {
+      "id": "frequencies",
+      "type": "snippetListing",
+      "title": "frequencies",
+      "attributes": {
+        "text": "Returns a dictionary with the unique values of a list as keys and their frequencies as the values.\n\nUse a `for` loop to populate a dictionary, `f`, with the unique values in `lst` as keys, adding to existing keys every time the same value is encountered.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "e39e557aa6a70400a5e7b7a7ab5291e1937d93c0016c8fd0897cce32af315be6"
+      }
+    },
+    {
       "id": "gcd",
       "type": "snippetListing",
       "title": "gcd",
@@ -562,7 +697,7 @@
         "tags": [
           "list",
           "object",
-          "beginner"
+          "intermediate"
         ]
       },
       "meta": {
@@ -574,14 +709,29 @@
       "type": "snippetListing",
       "title": "has_duplicates",
       "attributes": {
-        "text": "Returns `True` if there are duplicate values in a flast list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
+        "text": "Returns `True` if there are duplicate values in a flat list, `False` otherwise.\n\nUse `set()` on the given list to remove duplicates, compare its length with the length of the list.\n\n",
         "tags": [
           "list",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "498b0cc49b4a1ad7f98addb9c7bbc84320d91a5558eaf681352086c5ad6edb44"
+        "hash": "fb22c3f566fea0468c7331478cb216890de4af6b86b24f1ac41656bae949d99c"
+      }
+    },
+    {
+      "id": "have_same_contents",
+      "type": "snippetListing",
+      "title": "have_same_contents",
+      "attributes": {
+        "text": "Returns `True` if two lists contain the same elements regardless of order, `False` otherwise.\n\nUse `set()` on the combination of both lists to find the unique values.\nIterate over them with a `for` loop comparing the `count()` of each unique value in each list.\nReturn `False` if the counts do not match for any element, `True` otherwise.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3eb3a7c4b95e18bcd181965b01d6f46189735e0ada4a7e3e787026d9643792ed"
       }
     },
     {
@@ -612,6 +762,36 @@
       },
       "meta": {
         "hash": "dd49fd3dc6b7590a2607ded9b2f4b879ea56b93573e92376f669a1957ad9945b"
+      }
+    },
+    {
+      "id": "includes_all",
+      "type": "snippetListing",
+      "title": "includes_all",
+      "attributes": {
+        "text": "Returns `True` if all the elements in `values` are included in `lst`, `False` otherwise.\n\nCheck if every value in `values` is contained in `lst` using a `for` loop, returning `False` if any one value is not found, `True` otherwise.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "dd6fe881dce1046713ff6fe1a9ee70cb3ff580b5b4f40a83f1cded8f1b2fc471"
+      }
+    },
+    {
+      "id": "includes_any",
+      "type": "snippetListing",
+      "title": "includes_any",
+      "attributes": {
+        "text": "Returns `True` if any element in `values` is included in `lst`, `False` otherwise.\n\nCheck if any value in `values` is contained in `lst` using a `for` loop, returning `True` if any one value is found, `False` otherwise.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0207394cbc28148c73703db1298673049f9fe66936a59057955d3da180f3a0c4"
       }
     },
     {
@@ -710,14 +890,29 @@
       "type": "snippetListing",
       "title": "is_anagram",
       "attributes": {
-        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `s.replace()` to remove spaces from both strings.\nCompare the lengths of the two strings, return `False` if they are not equal.\nUse `sorted()` on both strings and compare the results.\n\n",
+        "text": "Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).\n\nUse `isalnum()` to filter out non-alphanumeric characters, `lower()` to transform each character to lowercase.\nUse `collections.Counter` to count the resulting characters for each string and compare the results.\n\n",
         "tags": [
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "efdcecce589a3812218ede260f156888eb8544ccf85eab35d1885689668292e8"
+        "hash": "15833b3a98e905cf4cbac346028c5e6b5560d3b968800b94548e77a77098b7cc"
+      }
+    },
+    {
+      "id": "is_contained_in",
+      "type": "snippetListing",
+      "title": "is_contained_in",
+      "attributes": {
+        "text": "Returns `True` if the elements of the first list are contained in the second one regardless of order, `False` otherwise.\n\n\nUse `count()` to check if any value in `a` has more occurences than it has in `b`, returning `False` if any such value is found, `True` otherwise.\n\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "8fa2c19d9202502df8d26e461e9b02c4c47525dc79a91f4616b61d650cfb23ce"
       }
     },
     {
@@ -844,6 +1039,21 @@
       },
       "meta": {
         "hash": "af50f2096fef9a18346e3c220ff1957ab4218075e6c02ae05d8c3f6e3d269549"
+      }
+    },
+    {
+      "id": "map_object",
+      "type": "snippetListing",
+      "title": "map_object",
+      "attributes": {
+        "text": "Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.\n\n\nUse a `for` loop to iterate over the list's values, assigning the values produced by `fn` to each key of the dictionary.\n\n",
+        "tags": [
+          "list",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "704d9dfb490d983b2be8465e241cf61360f574a22230974a38f55554b3a8e044"
       }
     },
     {
@@ -1235,6 +1445,36 @@
       },
       "meta": {
         "hash": "d53c8932c4c9deebcd2f578b62b2a5f09a081885f848a2ea97721c15f2e7ded2"
+      }
+    },
+    {
+      "id": "take",
+      "type": "snippetListing",
+      "title": "take",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the beginning.\n\nUse slice notation to create a slice of the list with `n` elements taken from the beginning.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "ee77775f6d662576e60f839273bc23a1200d2e58d5f681ab8fc5a686b647bd81"
+      }
+    },
+    {
+      "id": "take_right",
+      "type": "snippetListing",
+      "title": "take_right",
+      "attributes": {
+        "text": "Returns a list with `n` elements removed from the end.\n\nUse slice notation to create a slice of the list with `n` elements taken from the end.\n\n",
+        "tags": [
+          "list",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "5221a664a891ded456017072033baeb1bc25ee10e9556f64f09f6ebf0b5bf07b"
       }
     },
     {

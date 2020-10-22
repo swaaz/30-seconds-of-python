@@ -5,14 +5,14 @@ tags: list,beginner
 
 Filters out the non-unique values in a list.
 
-Use a `collections.Counter` to get the count of each value in the list.
-Use list comprehension to create a list containing only the unique values.
+- Use a `collections.Counter` to get the count of each value in the list.
+- Use list comprehension to create a list containing only the unique values.
 
 ```py
 from collections import Counter
 
 def filter_non_unique(lst):
-  return [item for item, count in counter = Counter(lst).items() if count == 1]
+  return [item for item, count in Counter(lst).items() if count == 1]
 ```
 
 ```py
